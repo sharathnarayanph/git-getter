@@ -1,0 +1,16 @@
+.DS_Store
+build
+node_modules
+configs/local.json
+npm-debug.log
+.idea/
+.vscode/
+/firefox
+lerna-debug.log
+flow-coverage
+.node-version
+yarn-error.log
+_site/
+coverage
+storybook-static
+tags
