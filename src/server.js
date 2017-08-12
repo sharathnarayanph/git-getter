@@ -40,7 +40,9 @@ app.use('/', (request, response) => {
 })
 
 if (!process.env.REQUEST_TOKEN.length) {
-  console.log('ERROR: process.env.REQUEST_TOKEN variable in src/config.js file is empty ! You must fill this field with the request_token of your bot before launching your bot locally')
+  console.log('ERROR: process.env.REQUEST_TOKEN variable in src/config.js file
+    is empty ! You must fill this field with the
+        request_token of your bot before launching your bot locally')
 
   process.exit(0)
 } else {
