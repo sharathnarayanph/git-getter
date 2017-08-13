@@ -4,6 +4,7 @@
  */
 
 const recastai = require('recastai')
+const trending = require('./modules/trending')
 
 // This function is the core of the bot behaviour
 const replyMessage = (message) => {
@@ -42,7 +43,14 @@ const replyMessage = (message) => {
     // Send all replies
     message.reply()
     .then(() => {
-      // Do some code after sending messages
+      if (result.action && result.action.slug ===
+            'trending' && result.action.done) {
+        trending(result.getMemory('trending-repo').raw)
+          .then(res => {
+            message.addReply(res)
+            message.reply()
+          })
+        }
     })
     .catch(err => {
       console.error('Error while sending message to channel', err)
