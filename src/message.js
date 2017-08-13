@@ -45,7 +45,7 @@ const replyMessage = (message) => {
     .then(() => {
       if (result.action && result.action.slug ===
             'trending' && result.action.done) {
-        trending(result.getMemory('trending-repo').raw)
+        trending(result.getMemory('repo').raw)
           .then(res => {
             message.addReply(res)
             message.reply()

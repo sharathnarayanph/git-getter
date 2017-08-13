@@ -29,8 +29,8 @@ const githubCall = (repo) => {
 }
 
 const getStatus = (repo) => {
-  const stars = repo1.stars
-  const reply = `${repo.name} has (${repo.start})`
+  const stars = repo[0].stars
+  const reply = `${repo[0].name} has (${repo[0].stars})`
   return reply
 }
 
