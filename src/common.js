@@ -1,6 +1,6 @@
 const rp = require('request-promise')
 
-const githubCall = (url) => {
+const githubCall = (url, params) => {
   var options = {
     url: url,
     headers: {
@@ -8,6 +8,8 @@ const githubCall = (url) => {
       'Authorization': `token ${process.env.GITHUB_TOKEN}`,
     }
   }
+
+  Object.assign(options, params);
 
   return rp(options).then(result => {
     return result;
