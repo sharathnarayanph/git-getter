@@ -40,7 +40,7 @@ const replyMessage = (message) => {
       result.replies.forEach(replyContent => message.addReply({ type: 'text', content: replyContent }))
     }
 
-    // Send all replies
+    //Send all replies
     message.reply()
     .then(() => {
       if (result.action && result.action.slug ===
@@ -55,6 +55,7 @@ const replyMessage = (message) => {
     .catch(err => {
       console.error('Error while sending message to channel', err)
     })
+
   })
   .catch(err => {
     console.error('Error while sending message to Recast.AI', err)
