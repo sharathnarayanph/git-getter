@@ -1,3 +1,5 @@
+/*Common place holder for making github calls*/
+
 const rp = require('request-promise')
 
 const githubCall = (url, params) => {
