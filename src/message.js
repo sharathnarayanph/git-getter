@@ -5,6 +5,7 @@
 
 const recastai = require('recastai')
 const trending = require('./modules/trending')
+const notifications = require('./modules/notifications')
 
 // This function is the core of the bot behaviour
 const replyMessage = (message) => {
@@ -49,7 +50,12 @@ const replyMessage = (message) => {
           .then(res => {
             message.addReply(res)
             message.reply()
-          })
+          });
+        notifications()
+          .then(res => {
+            message.addReply(res);
+            message.reply();
+          });
         }
     })
     .catch(err => {
